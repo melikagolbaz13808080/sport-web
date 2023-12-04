@@ -79,7 +79,7 @@ body {
 }
 
 #menu {
-    background-image: url(../pics/menu_line.jpg);
+    background-color: #000;
     max-width: 100%;
     background-size: cover;
     position: fixed;
@@ -244,7 +244,7 @@ body {
 #main_about {
     box-shadow: inset 0 0 0 5px rgba(12, 80, 11, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
     border-radius: 150px;
-    background-image: url('../pics/about.jpg');
+    background-image: url('../pics/download.jfif');
     background-position: right center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -305,7 +305,7 @@ body {
 
 /*scroll img*/
 .fixed-bg {
-    background-image: url(../pics/fixed.jpg);
+    background-image: url(../pics/back.jpg);
     min-height: 300px;
     background-attachment: fixed;
     background-position: center;
@@ -577,9 +577,9 @@ body {
 .ih-item.circle.effect1 .spinner {
     width: 230px;
     height: 230px;
-    border: 10px solid #00a651;
-    border-right-color: #B5E44C;
-    border-bottom-color: #B5E44C;
+    border: 10px solid #d8a97d;
+    border-right-color: #7c5a42;
+    border-bottom-color: #3b2118;
     border-radius: 50%;
     -webkit-transition: all 0.8s ease-in-out;
     -moz-transition: all 0.8s ease-in-out;
