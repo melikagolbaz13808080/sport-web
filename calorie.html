@@ -11,13 +11,14 @@
         <link type="text/css" href="css/bootstrap.css" rel="stylesheet">
         <link type="text/css" href="css/style.css" rel="stylesheet">
         <link type="text/css" href="css/responsiveslides.css" rel="stylesheet">
+        <link type="text/css" href="css/custom.css" rel="stylesheet">
         <style>
             /* اینجا می‌توانید استایل‌های خود را اضافه کنید */
-            
+
             body {
                 background-color: #f8f9fa;
             }
-            
+
             #calorie-form {
                 margin-top: 50px;
                 max-width: 400px;
@@ -28,13 +29,13 @@
                 border-radius: 5px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
-            
+
             #calorie-form h1 {
                 font-size: 24px;
                 color: #007bff;
                 margin-bottom: 20px;
             }
-            
+
             #calorie-form button {
                 background-color: #007bff;
                 color: #fff;
@@ -43,138 +44,114 @@
     </head>
 
     <body>
-        <!-- Nav Bar Start -->
-        <div class="container-fluid p-0">
-            <div id="menu" class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
-                <div class="container p-0">
-                    <div class="col-lg-9 col-md-9 col-sm-9 p-0 pr-20">
-                        <table width="100%">
-                            <tr align="center">
-                                <td width="12%"><a href="index.html">صفحه اصلی</a></td>
-                                <td width="12%"><a href="about.html">درباره ما</a></td>
-                                <td width="12%"><a href="products.html">تغذیه ورزشی</a></td>
-                                <td width="12%"><a href="gallery.html">آموزش حرکات ورزشی</a></td>
-                                <td width="12%"><a href="news.html"> محتوای آموزشی</a></td>
-                                <td width="12%" id="active"><a href="calorie.html"> محاسبه کالری</a></td>
-                                <td width="12%"><a href="contact.html">تماس با ما</a></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3">
+    <!-- Nav Bar Start -->
+    <div class="container-fluid p-0">
+        <div id="menu" class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
+            <div class="container p-0">
+                <div class="col-lg-9 col-md-9 col-sm-9 p-0 pr-20">
+                    <table width="100%">
+                        <tr align="center">
+                            <td width="10%"><a href="index.html">صفحه اصلی</a></td>
+                            <td width="10%"><a href="about.html">درباره ما</a></td>
+                            <td width="10%"><a href="products.html">تغذیه ورزشی</a></td>
+                            <td width="10%"><a href="gallery.html">آموزش ورزشی</a></td>
+                            <td width="10%"><a href="news.html"> محتوای آموزشی</a></td>
+                            <td width="10%" id="active"><a href="calorie.html"> محاسبه کالری</a></td>
+                            <td width="10%"><a href="contact.html">تماس با ما</a></td>
+                            <td width="10%"><a href="contact.html">ورود / ثبت نام</a></td>
+                            <td width="12%"><a href="gold-course.html" class="gold-course">دوره طلایی</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
                         <span class="col-lg-9 col-md-9 col-sm-8 text-left">
 						<a href="index.html"><h3>سایت ورزشی</h1></a>
 					</span>
-                        <div class="col-lg-3 col-md-3 col-sm-4 text-center">
-                            <div class="ir-flag"></div>
-                            <div class="eng-flag"></div>
-                        </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 text-center">
+                        <div class="ir-flag"></div>
+                        <div class="eng-flag"></div>
                     </div>
                 </div>
             </div>
-
-
-            <!-- Nav Bar End -->
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0">
-                <div id="header-img">
-                    <img src="assets/banner-bmi2.jpg">
-                </div>
-            </div>
-            <!-- Floating Button to the top-->
-
-            <div class="container">
-                <div id="calorie-form" class="text-center">
-                    <h2 class="fw-bold mb-4">محاسبه کالری و ردیابی تغذیه</h2>
-                    <form class="form-horizontal" style="padding: 20px;">
-                        <div class="form-group">
-                            <input type="number" class="form-control" id="age" placeholder="سن را وارد کنید">
-                        </div>
-
-                        <div class="form-group">
-                            <select class="form-control" id="gender">
-								<option selected>جنسیت را انتخاب کنید</option>
-								<option value="male">مذکر</option>
-								<option value="female">مونث</option>
-							</select>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="number" class="form-control" id="height" placeholder="قد را وارد کنید (سانتی‌متر)">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="number" class="form-control" id="weight" placeholder="وزن را وارد کنید (کیلوگرم)">
-                        </div>
-
-                        <div class="form-group">
-                            <select id="cactivity" class="form-control">
-								<option selected="selected">انتخاب فعالیت...</option>
-								<option value="1.2">کم تحرک: ورزش کم یا بدون ورزش</option>
-								<option value="1.375">سبک: 1-3 بار در هفته ورزش کنید</option>
-								<option value="1.465">متوسط: 4-5 بار در هفته ورزش کنید</option>
-								<option value="1.55">فعال: ورزش روزانه یا ورزش شدید 3-4 بار در هفته</option>
-								<option value="1.725">بسیار فعال: ورزش شدید 6-7 بار در هفته</option>
-								<option value="1.9">فوق‌العاده فعال: ورزش بسیار شدید روزانه، یا شغل فیزیکی</option>
-							</select>
-                        </div>
-
-                        <div class="form-group">
-                            <button type="button" id="submit" class="btn btn-primary">محاسبه</button>
-                        </div>
-                    </form>
-
-                    <div id="calorie-output" class="mt-4">
-                        <p id="result"></p>
-                        <p id="result-bmi"></p>
-                        <p id="result-bmi-index"></p>
-                        <p id="diet-suggestion"></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- start footer -->
-            <div id="footer">
-                <div class="container p-0">
-                    <span class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-left">
-						IRAN - KASHAN<br>
-						Mob:           09138907654<br>
-						Tel:         03177450234<br>
-						Email: SportSite2023@gmail.com
-					</span>
-
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center footer-logo">
-                        <img src="pics/Golds-Gym-logo.jpg">
-                    </div>
-                    <span class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					ایران - کاشان<br>
-					همراه : 09138907654<br>
-					تلفن: 03177450234<br>
-					پست الکترونیک: SportSite2023@gmail.com<br></span>
-                </div>
-            </div>
-            <!-- end footer -->
-
-            <!-- start copy right -->
-            <div class="container p-0">
-                <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center copyright">
-				<small>بچه های دانشگاه فدک</small><br>
-				<small>Copyright © 2019 Design by :<a href="#" target="_blank"> melika golbaz , Fateme seyedi , zeinab zarepor </a></small>
-			</span>
-            </div>
-            <!-- end copy right -->
         </div>
 
-        <!-- start javascript -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/sidenav.js"></script>
-        <script src="js/responsiveslides.min.js"></script>
-        <script src="js/slider.js"></script>
 
-        <!-- JavaScript Libraries -->
-        <script src="js/vanilla-tilt.min.js"></script>
+        <!-- Nav Bar End -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0">
+            <div id="header-img">
+                <img src="assets/banner-bmi2.jpg">
+            </div>
+        </div>
+        <!-- Floating Button to the top-->
 
-        <!-- Template Javascript -->
-        <script src="js/calorie.js"></script>
+        <div class="container">
+            <div id="calorie-form" class="text-center">
+                <h2 class="fw-bold mb-4">محاسبه کالری و ردیابی تغذیه</h2>
+                <form class="form-horizontal" style="padding: 20px;">
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="age" placeholder="سن را وارد کنید">
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control" id="gender">
+                            <option selected>جنسیت را انتخاب کنید</option>
+                            <option value="male">مذکر</option>
+                            <option value="female">مونث</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="height" placeholder="قد را وارد کنید (سانتی‌متر)">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="weight" placeholder="وزن را وارد کنید (کیلوگرم)">
+                    </div>
+
+                    <div class="form-group">
+                        <select id="cactivity" class="form-control">
+                            <option selected="selected">انتخاب فعالیت...</option>
+                            <option value="1.2">کم تحرک: ورزش کم یا بدون ورزش</option>
+                            <option value="1.375">سبک: 1-3 بار در هفته ورزش کنید</option>
+                            <option value="1.465">متوسط: 4-5 بار در هفته ورزش کنید</option>
+                            <option value="1.55">فعال: ورزش روزانه یا ورزش شدید 3-4 بار در هفته</option>
+                            <option value="1.725">بسیار فعال: ورزش شدید 6-7 بار در هفته</option>
+                            <option value="1.9">فوق‌العاده فعال: ورزش بسیار شدید روزانه، یا شغل فیزیکی</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" id="submit" class="btn btn-primary">محاسبه</button>
+                    </div>
+                </form>
+
+                <div id="calorie-output" class="mt-4">
+                    <p id="result"></p>
+                    <p id="result-bmi"></p>
+                    <p id="result-bmi-index"></p>
+                    <p id="diet-suggestion"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- start footer -->
+        <div id="includedFooter"></div>
+        <!-- end footer -->
+    </div>
+
+    <!-- start javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sidenav.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- JavaScript Libraries -->
+    <script src="js/vanilla-tilt.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/calorie.js"></script>
     </body>
 
     </html>

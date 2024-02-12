@@ -2,3 +2,12 @@
     max-width: 200px;
     max-height: 200px;
 }
+.gold-course {
+  animation: myanimation 2s infinite;
+}
+
+@keyframes myanimation {
+  0% {color: #FFD700;}
+  50% {color: #FFFFFF;}
+  100% {color: #FFD700;}
+}
