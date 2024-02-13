@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- start style -->
+    <link type="text/css" href="css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <link type="text/css" href="css/responsiveslides.css" rel="stylesheet">
+    <link type="text/css" href="css/custom.css" rel="stylesheet">
+    <style>
+        .container {
+            text-align: center;
+        }
+
+        .profile {
+            border: 2px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: auto;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .profile h2 {
+            color: #333;
+        }
+
+        .profile p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .btn-group {
+            margin-top: 20px;
+        }
+
+        .sport-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .sport-info div {
+            flex: 1;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: 8px;
+        }
+
+        .sport-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .edit-form {
+            display: none;
+        }
+
+        .edit-form input {
+            margin-bottom: 10px;
+        }
+    </style>
+    <!-- end style -->
+</head>
+
+<body>
+<div class="container-fluid p-0">
+    <!-- start menu and nav-bar -->
+    <!-- start desktop menu -->
+    <div id="menu" class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
+        <div class="container p-0">
+            <div class="col-lg-9 col-md-9 col-sm-9 p-0 pr-20">
+                <table width="100%">
+                    <tr align="center">
+                        <td width="10%"><a href="index.html">صفحه اصلی</a></td>
+                        <td width="10%"><a href="about.html">درباره ما</a></td>
+                        <td width="10%"><a href="products.html">تغذیه ورزشی</a></td>
+                        <td width="10%"><a href="gallery.html">آموزش ورزشی</a></td>
+                        <td width="10%"><a href="news.html"> محتوای آموزشی</a></td>
+                        <td width="10%"><a href="calorie.html">محاسه کالری</a></td>
+                        <td width="10%"><a href="contact.html">تماس با ما</a></td>
+                        <td width="10%" id="auth-nav"><a href="auth.html">ورود / ثبت نام</a></td>
+                        <td width="10%" id="profile-nav"><a href="profile.html">پروفایل</a></td>
+                        <td width="12%"><a href="gold-course.html" class="gold-course">دوره طلایی</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                    <span class="col-lg-8 col-md-8 col-sm-8 text-left">
+							<a href="index.html"><img src="assets/logo.png" id="logo" alt=""></a>
+						</span>
+                <div class="col-lg-3 col-md-3 col-sm-4 text-center">
+                    <div class="ir-flag"></div>
+                    <div class="eng-flag"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end desktop menu -->
+
+    <!-- end menu and nav-bar -->
+
+    <!-- start content -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0">
+        <div id="header-img">
+            <img src="assets/login.jpg">
+        </div>
+    </div>
+    <!-- title for desktop -->
+    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs" id="intro">
+        <h3>پروفایل شما</h3>
+    </div>
+    <!-- /title for desktop -->
+    <!-- title for mobile -->
+    <div class="col-xs-12 visible-xs" id="intro-xs">
+        <h3>پروفایل شما</h3>
+    </div>
+    <!-- /title for mobile -->
+    <div class="container text-justify">
+        <div class="alert alert-danger" style="padding: 10px;display: none" role="alert" id="edit-error"></div>
+        <div class="profile">
+            <img src="assets/user-profile.png" alt="User Profile Image">
+            <h2 id="fullname">نام و نام خانوادگی</h2>
+            <p id="age">سن: -</p>
+            <p id="gender">جنسیت: -</p>
+            <p id="city">شهر: -</p>
+            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default btn-info" onclick="showEditForm()">ویرایش اطلاعات
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default btn-warning" onclick="buyCharge()">خرید اشتراک</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default btn-danger" onclick="logout()">خروج</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="edit-form">
+            <div class="row">
+                <div class="col-lg-12">
+                    <label for="edit-fullname">نام و نام خانوادگی:</label>
+                    <input type="text" id="edit-fullname" placeholder="نام و نام خانوادگی">
+                </div>
+                <div class="col-lg-12">
+                    <label for="edit-age">سن:</label>
+                    <input type="text" id="edit-age" placeholder="سن">
+                </div>
+                <div class="col-lg-12">
+                    <label for="edit-gender">جنسیت:</label>
+                    <input type="text" id="edit-gender" placeholder="جنسیت">
+                </div>
+                <div class="col-lg-12">
+                    <label for="edit-city">شهر:</label>
+                    <input type="text" id="edit-city" placeholder="شهر">
+                </div>
+                <div class="col-lg-12">
+                    <label for="edit-size">قد:</label>
+                    <input type="text" id="edit-size" placeholder="قد">
+                </div>
+                <div class="col-lg-12">
+                    <label for="edit-weight">ورزن:</label>
+                    <input type="text" id="edit-weight" placeholder="وزن">
+                </div>
+
+
+                <label for="edit-sport">ورزش مورد علاقه:</label>
+                <input type="text" id="edit-sport" placeholder="ورزش مورد علاقه">
+
+
+            </div>
+            <button type="button" class="btn btn-default btn-success" onclick="saveEdit()">ذخیره تغییرات</button>
+
+        </div>
+
+        <div class="sport-info">
+            <div>
+                <h3>وزن</h3>
+                <p id="weight">- کیلوگرم</p>
+            </div>
+
+            <div>
+                <h3>قد</h3>
+                <p id="size">- سانتی‌متر</p>
+            </div>
+
+            <div>
+                <h3>ورزش مورد علاقه</h3>
+                <p id="sport">-</p>
+            </div>
+        </div>
+    </div>
+    <!-- end content -->
+
+    <!-- start footer -->
+    <div id="includedFooter"></div>
+    <!-- end footer -->
+</div>
+
+<!-- start javascript -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/sidenav.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/sweetalert.js"></script>
+<script src="js/custom.js"></script>
+<script>
+    const fullname = localStorage.getItem('fullname')
+    const age = localStorage.getItem('age')
+    const gender = localStorage.getItem('gender')
+    const city = localStorage.getItem('city')
+    const size = localStorage.getItem('size')
+    const weight = localStorage.getItem('weight')
+    const sport = localStorage.getItem('sport')
+    document.getElementById('fullname').innerText = "نام و نام خانوادگی : " + fullname
+    document.getElementById('age').innerText = "سن : " + age
+    document.getElementById('gender').innerText = "جنسیت : " + gender
+    document.getElementById('city').innerText = "شهر : " + city
+    document.getElementById('size').innerText = "سانتی متر " + size
+    document.getElementById('weight').innerText = "کیلو گرم " + weight
+    document.getElementById('sport').innerText = sport
+    document.getElementById('edit-fullname').value = fullname;
+    document.getElementById('edit-age').value = age;
+    document.getElementById('edit-gender').value = gender;
+    document.getElementById('edit-city').value = city;
+    document.getElementById('edit-size').value = size;
+    document.getElementById('edit-weight').value = weight;
+    document.getElementById('edit-sport').value = sport;
+    let email = localStorage.getItem('email')
+
+    function showEditForm() {
+        document.querySelector('.profile').style.display = 'none';
+        document.querySelector('.sport-info').style.display = 'none';
+        document.querySelector('.edit-form').style.display = 'block';
+    }
+
+    function saveEdit() {
+
+        const fullname = document.getElementById('edit-fullname').value;
+        const age = document.getElementById('edit-age').value;
+        const gender = document.getElementById('edit-gender').value;
+        const city = document.getElementById('edit-city').value;
+        const size = document.getElementById('edit-size').value;
+        const weight = document.getElementById('edit-weight').value;
+        const sport = document.getElementById('edit-sport').value;
+
+        axios.post('http://127.0.0.1:5000/update', {
+            email: email,
+            fullname: fullname,
+            age: age,
+            gender: gender,
+            city: city,
+            size: size,
+            weight: weight,
+            sport: sport,
+        })
+            .then(function (response) {
+                document.getElementById('fullname').innerText = "نام و نام خانوادگی : " + fullname;
+                localStorage.setItem('fullname', fullname)
+                document.getElementById('age').innerText = "سن : " + age;
+                localStorage.setItem('age', age)
+                document.getElementById('gender').innerText = "جنسیت : " + gender;
+                localStorage.setItem('gender', gender)
+                document.getElementById('city').innerText = "شهر : " + city;
+                localStorage.setItem('city', city)
+                document.getElementById('size').innerText = "سانتی متر " + size;
+                localStorage.setItem('size', size)
+                document.getElementById('weight').innerText = "کیلوگرم " + weight;
+                localStorage.setItem('weight', weight)
+                document.getElementById('sport').innerText = sport;
+                localStorage.setItem('sport', sport)
+                document.querySelector('.profile').style.display = 'block';
+                document.querySelector('.sport-info').style.display = 'flex';
+                document.querySelector('.edit-form').style.display = 'none';
+            })
+            .catch(function (error) {
+                let show_message = document.getElementById('edit-error')
+                show_message.setAttribute("style", "padding: 10px;display: block; margin-top: 10px")
+                show_message.innerText = error.response.data.message
+            });
+    }
+
+    function buyCharge() {
+        localStorage.setItem("gold-time", '3600')
+        localStorage.setItem("gold-enable", 'true')
+        Swal.fire({
+            title: "موفقیت آمیز",
+            text: "شما یک ساعت اشتراک رایگان دریافت کردید",
+            icon: "success"
+        });
+    }
+
+    function logout() {
+        Swal.fire({
+            title: "آیا میخواهید خارج شوید؟",
+            text: "اگر قصد خاج شدن از پروفایل خود را دارید گزینه بله و اگر نه خیر",
+            icon: "warning",
+            showCancelButton: true,
+            cancelButtonText: "خیر",
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "بله"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.setItem('fullname', '')
+                localStorage.setItem('email', '')
+                localStorage.setItem('is_login', 'false')
+                Swal.fire({
+                    title: "خارج شدید!",
+                    text: "شما با موفقیت خاج شدید  به صفحه اصلی برمیگردید",
+                    icon: "success"
+                });
+                window.location.href = "index.html";
+            }
+        });
+    }
+</script>
+<!-- end javascript -->
+</body>
+<!-- This template has been downloaded from Webrubik.com -->
+
+</html>
