@@ -63,6 +63,13 @@
             background-color: #ccc;
             color: #000000;
         }
+
+        #progress-bar {
+            width: 0%;
+            height: 20px;
+            background-color: #4CAF50;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -124,7 +131,8 @@
             میتوانید استفاده کنید ⚠️
 
         </div>
-        <div class="item-boxes">
+        <div style="text-align: center" id="remainingTime"></div>
+        <div class="item-boxes" id="show-dore">
             <div class="item-box">
                 <img src="assets/box-gold/box1.jpg" alt="Image 1">
                 <h3>برنامه چربی سوزی ۳ روز در هفته بانوان مبتدی</h3>
@@ -133,7 +141,7 @@
                     میخواهید ۳ جلسه در هفته تمرین کنید. پیشنهاد میکنیم این برنامه تمرینی ۶ هفته ای را مو به مو رعایت
                     کنید. با داشتن یک رژیم غذایی مناسب و رعایت کامل این تمرینات میتوانید شاهد تغییرات چشمگیری در اندام
                     خود باشید.</p>
-                <a href="#" class="btn btn-success">انتخاب دوره</a>
+                <button class="btn btn-success" onclick="setSport('1')">انتخاب دوره</button>
             </div>
             <div class="item-box">
                 <img src="assets/box-gold/box2.jpg" alt="Image 2">
@@ -143,7 +151,7 @@
                     میخواهید ۴ جلسه در هفته تمرین کنید. پیشنهاد میکنیم این برنامه تمرینی ۶ هفته ای را مو به مو رعایت
                     کنید. با داشتن یک رژیم غذایی مناسب و رعایت کامل این تمرینات میتوانید شاهد تغییرات چشمگیری در اندام
                     خود باشید.</p>
-                <a href="#" class="btn btn-success">انتخاب دوره</a>
+                <button class="btn btn-success" onclick="setSport('1')">انتخاب دوره</button>
             </div>
             <div class="item-box">
                 <img src="assets/box-gold/box3.jpg" alt="Image 3">
@@ -152,7 +160,13 @@
                     تنظیم شده است. اگر یک ورزشکار حرفه ای به حساب می آیید و توان ۵ جلسه تمرین فشرده را در هفته دارید.
                     پیشنهاد میکنیم این برنامه تمرینی ۶ هفته ای را مو به مو رعایت کنید. شما با یک رژیم غذایی و رعایت کامل
                     این برنامه میتوانید شاهد پیشرفت بدن خود در مسیر تناسب اندام باشید.</p>
-                <a href="#" class="btn btn-success">انتخاب دوره</a>
+                <button class="btn btn-success" onclick="setSport('1')">انتخاب دوره</button>
+            </div>
+        </div>
+        <div id="show-sport" style="display: none">
+            <div id="95795982091">
+                <script type="text/JavaScript"
+                        src="https://www.aparat.com/embed/64ZEa?data[rnddiv]=95795982091&data[responsive]=yes"></script>
             </div>
         </div>
     </div>
@@ -172,7 +186,6 @@
 <script src="js/axios.min.js"></script>
 <script src="js/custom.js"></script>
 <script>
-    // تابعی برای چک کردن وجود اطلاعات کاربر در Local Storage
 
     // بررسی لاگین بودن کاربر
     if (!isLoggedIn()) {
@@ -182,6 +195,58 @@
     } else {
         // کاربر لاگین است
         // نمایش محتوای صفحه دوره طلایی
+    }
+
+    // تابع برای نمایش زمان باقی‌مانده
+    function showRemainingTime() {
+        // گرفتن مقدار زمان از localStorage
+        var goldTime = localStorage.getItem('gold-time') || 3600;
+
+        // کاهش مقدار زمان هر ثانیه
+        goldTime--;
+
+        // ذخیره مقدار جدید در localStorage
+        localStorage.setItem('gold-time', goldTime);
+
+        // تبدیل زمان به دقیقه و ثانیه
+        var remainingMinutes = Math.floor(goldTime / 60);
+        var remainingSeconds = goldTime % 60;
+
+        // نمایش زمان به کاربر
+        document.getElementById('remainingTime').innerText = 'زمان باقی‌مانده: ' + remainingMinutes + ' دقیقه و ' + remainingSeconds + ' ثانیه';
+
+        // اگر زمان به صفر رسیده باشد، می‌توانید اقدامات لازم را انجام دهید، مثلاً نمایش پیامی به کاربر یا انجام یک عملیات خاص.
+        if (goldTime === 0) {
+            alert('زمان شما به پایان رسیده است!');
+        }
+    }
+
+    // فراخوانی تابع نمایش زمان هر ثانیه
+    setInterval(showRemainingTime, 1000);
+
+    // اجرای اولیه تابع نمایش زمان
+    showRemainingTime();
+    checkSport()
+
+    function checkSport() {
+        let gold_type = localStorage.getItem("gold-type")
+        if (gold_type === "1") {
+            document.getElementById('show-dore').style.display = 'none';
+            document.getElementById('show-sport').style.display = 'block'
+
+        } else if (gold_type === "2") {
+            // دوره میانه
+        } else if (gold_type === "3") {
+            // دوره حرفه ای
+        } else {
+            // کاربر دوره ای رو انتخاب نکرده
+        }
+    }
+
+    function setSport(item) {
+        localStorage.setItem("gold-type", item)
+        document.getElementById('show-dore').style.display = 'none';
+        document.getElementById('show-sport').style.display = 'block'
     }
 </script>
 <!-- end javascript -->
