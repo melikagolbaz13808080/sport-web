@@ -21,9 +21,9 @@
         }
 
         .item-box {
-            width: 300px;
-            height: 400px;
+            width: 30%;
             margin: 10px;
+            padding: 10px;
             border: 1px solid #ccc;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -32,23 +32,26 @@
 
         .item-box img {
             width: 100%;
-            height: 200px;
-            border-radius: 10px 10px 0 0;
+            height: 300px;
+            border-radius: 10px;
         }
 
         .item-box h3 {
             margin: 10px 0;
+            padding: 10px;
             font-size: 18px;
             font-weight: bold;
         }
 
         .item-box p {
-            margin: 0 10px;
+            margin: 10px;
             line-height: 1.5;
+            text-align: justify;
+            font-size: 14px;
         }
 
         .item-box a {
-            margin: 10px 0;
+            margin: 10px;
             padding: 5px 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -58,6 +61,7 @@
 
         .item-box a:hover {
             background-color: #ccc;
+            color: #000000;
         }
     </style>
 </head>
@@ -78,14 +82,14 @@
                         <td width="10%"><a href="news.html"> محتوای آموزشی</a></td>
                         <td width="10%"><a href="calorie.html">محاسه کالری</a></td>
                         <td width="10%"><a href="contact.html">تماس با ما</a></td>
-                        <td width="10%"><a href="contact.html">ورود / ثبت نام</a></td>
+                        <td width="10%"><a href="auth.html">ورود / ثبت نام</a></td>
                         <td width="12%" id="active"><a href="gold-course.html" class="gold-course">دوره طلایی</a></td>
                     </tr>
                 </table>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3">
-                    <span class="col-lg-9 col-md-9 col-sm-8 text-left">
-							<a href="index.html"><img src="pics/s-logo.png" id="logo" alt=""></a>
+                    <span class="col-lg-8 col-md-8 col-sm-8 text-left">
+							<a href="index.html"><img src="assets/logo.png" id="logo" alt=""></a>
 						</span>
                 <div class="col-lg-3 col-md-3 col-sm-4 text-center">
                     <div class="ir-flag"></div>
@@ -114,26 +118,40 @@
         <h3>دوره طلایی</h3>
     </div>
     <!-- /title for mobile -->
-    HTML
     <div class="container text-justify">
+        <div class="alert alert-warning text-center" role="alert"> ⚠️ هشدار با انتخاب دوره خود فقط 1 ساعت رایگان
+            میتوانید استفاده کنید ⚠️
+
+        </div>
         <div class="item-boxes">
             <div class="item-box">
-                <img src="image1.jpg" alt="Image 1">
-                <h3>عنوان آیتم 1</h3>
-                <p>توضیحات آیتم 1</p>
-                <a href="#">اطلاعات بیشتر</a>
+                <img src="assets/box-gold/box1.jpg" alt="Image 1">
+                <h3>برنامه چربی سوزی ۳ روز در هفته بانوان مبتدی</h3>
+                <p>برنامه چربی سوزی ۳ روز در هفته بانوان مبتدی ، مخصوص خانم هایی که هدف کاهش وزن و چربی سوزی دارند،
+                    تنظیم شده است. اگر تازه به بدنسازی روی آورده اید و ورزشکار مبتدی یا نیمه حرفه ای محسوب می شوید و
+                    میخواهید ۳ جلسه در هفته تمرین کنید. پیشنهاد میکنیم این برنامه تمرینی ۶ هفته ای را مو به مو رعایت
+                    کنید. با داشتن یک رژیم غذایی مناسب و رعایت کامل این تمرینات میتوانید شاهد تغییرات چشمگیری در اندام
+                    خود باشید.</p>
+                <a href="#" class="btn btn-success">انتخاب دوره</a>
             </div>
             <div class="item-box">
-                <img src="image2.jpg" alt="Image 2">
-                <h3>عنوان آیتم 2</h3>
-                <p>توضیحات آیتم 2</p>
-                <a href="#">اطلاعات بیشتر</a>
+                <img src="assets/box-gold/box2.jpg" alt="Image 2">
+                <h3>برنامه چربی سوزی ۴ روز در هفته بانوان میانه</h3>
+                <p>برنامه چربی سوزی ۴ روز در هفته بانوان میانه ، مخصوص خانم هایی که هدف کاهش وزن و چربی سوزی دارند،
+                    تنظیم شده است. اگر تازه به بدنسازی روی آورده اید و ورزشکار مبتدی یا نیمه حرفه ای محسوب می شوید و
+                    میخواهید ۴ جلسه در هفته تمرین کنید. پیشنهاد میکنیم این برنامه تمرینی ۶ هفته ای را مو به مو رعایت
+                    کنید. با داشتن یک رژیم غذایی مناسب و رعایت کامل این تمرینات میتوانید شاهد تغییرات چشمگیری در اندام
+                    خود باشید.</p>
+                <a href="#" class="btn btn-success">انتخاب دوره</a>
             </div>
             <div class="item-box">
-                <img src="image3.jpg" alt="Image 3">
-                <h3>عنوان آیتم 3</h3>
-                <p>توضیحات آیتم 3</p>
-                <a href="#">اطلاعات بیشتر</a>
+                <img src="assets/box-gold/box3.jpg" alt="Image 3">
+                <h3>برنامه چربی سوزی ۵ روز در هفته بانوان حرفه ای</h3>
+                <p>برنامه چربی سوزی ۵ روز در هفته بانوان حرفه ای ، مخصوص خانم هایی که هدف کاهش وزن و چربی سوزی دارند،
+                    تنظیم شده است. اگر یک ورزشکار حرفه ای به حساب می آیید و توان ۵ جلسه تمرین فشرده را در هفته دارید.
+                    پیشنهاد میکنیم این برنامه تمرینی ۶ هفته ای را مو به مو رعایت کنید. شما با یک رژیم غذایی و رعایت کامل
+                    این برنامه میتوانید شاهد پیشرفت بدن خود در مسیر تناسب اندام باشید.</p>
+                <a href="#" class="btn btn-success">انتخاب دوره</a>
             </div>
         </div>
     </div>
@@ -150,8 +168,28 @@
 <script src="js/sidenav.js"></script>
 <script src="js/responsiveslides.min.js"></script>
 <script src="js/slider.js"></script>
+<script src="js/axios.min.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/custom.js"></script>
+<script>
+    // تابعی برای چک کردن وجود اطلاعات کاربر در Local Storage
+    function isLoggedIn() {
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // بررسی لاگین بودن کاربر
+    if (!isLoggedIn()) {
+        // کاربر لاگین نیست
+        // هدایت کاربر به صفحه ورود به سیستم
+        window.location.href = "auth.html";
+    } else {
+        // کاربر لاگین است
+        // نمایش محتوای صفحه دوره طلایی
+    }
+</script>
 <!-- end javascript -->
 </body>
 <!-- This template has been downloaded from Webrubik.com -->

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- start style -->
+    <link type="text/css" href="css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <link type="text/css" href="css/responsiveslides.css" rel="stylesheet">
+    <link type="text/css" href="css/custom.css" rel="stylesheet">
+    <!-- end style -->
+</head>
+
+<body>
+<div class="container-fluid p-0">
+    <!-- start menu and nav-bar -->
+    <!-- start desktop menu -->
+    <div id="menu" class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
+        <div class="container p-0">
+            <div class="col-lg-9 col-md-9 col-sm-9 p-0 pr-20">
+                <table width="100%">
+                    <tr align="center">
+                        <td width="10%"><a href="index.html">صفحه اصلی</a></td>
+                        <td width="10%"><a href="about.html">درباره ما</a></td>
+                        <td width="10%"><a href="products.html">تغذیه ورزشی</a></td>
+                        <td width="10%"><a href="gallery.html">آموزش ورزشی</a></td>
+                        <td width="10%"><a href="news.html"> محتوای آموزشی</a></td>
+                        <td width="10%"><a href="calorie.html">محاسه کالری</a></td>
+                        <td width="10%"><a href="contact.html">تماس با ما</a></td>
+                        <td width="10%" id="active"><a href="auth.html">ورود / ثبت نام</a></td>
+                        <td width="12%"><a href="gold-course.html" class="gold-course">دوره طلایی</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                    <span class="col-lg-8 col-md-8 col-sm-8 text-left">
+							<a href="index.html"><img src="assets/logo.png" id="logo" alt=""></a>
+						</span>
+                <div class="col-lg-3 col-md-3 col-sm-4 text-center">
+                    <div class="ir-flag"></div>
+                    <div class="eng-flag"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end desktop menu -->
+
+    <!-- end menu and nav-bar -->
+
+    <!-- start content -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0">
+        <div id="header-img">
+            <img src="assets/login.jpg">
+        </div>
+    </div>
+    <!-- title for desktop -->
+    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs" id="intro">
+        <h3>ورود / ثبت نام</h3>
+    </div>
+    <!-- /title for desktop -->
+    <!-- title for mobile -->
+    <div class="col-xs-12 visible-xs" id="intro-xs">
+        <h3>ورود / ثبت نام</h3>
+    </div>
+    <!-- /title for mobile -->
+    <div class="container text-justify">
+        <div class="alert alert-warning text-center" role="alert"> ⚠️ برای استفاده از دوره طلایی ابتدا باید عضو سایت
+            شوید ⚠️
+        </div>
+        <div class="alert alert-success text-center" role="alert" id="login-success" style="display: none"></div>
+        <div class="row">
+            <div class="col-md-6" id="registerForm">
+                <h2 style="padding-bottom: 5px">ثبت نام</h2>
+                <div class="alert alert-info" style="padding: 10px" role="alert">برای ثبت نام در سایت اطلاعات خود را
+                    دقیق کامل کنید
+                </div>
+                <form>
+                    <input type="text" id="fullname-register" placeholder="نام و نام خانوادگی">
+                    <input type="email" id="email-register" placeholder="ایمیل">
+                    <input type="password" id="password-register" placeholder="رمز عبور">
+                    <button type="button" onclick="submitFormRegister()" class="btn btn-success">ثبت نام</button>
+                    <div class="alert alert-danger" style="padding: 10px;display: none" role="alert"
+                         id="register-error"></div>
+                </form>
+            </div>
+            <div class="col-md-6" id="loginForm">
+                <h2 style="padding-bottom: 5px">ورود به سیستم</h2>
+                <div class="alert alert-info" style="padding: 10px" role="alert">اگر ثبت نام کرده اید وارد شوید</div>
+                <form>
+                    <input type="email" id="email-login" placeholder="ایمیل">
+                    <input type="password" id="password-login" placeholder="رمز عبور">
+                    <button type="button" onclick="submitFormLogin()" class="btn btn-success">ورود</button>
+                    <div class="alert alert-danger" style="padding: 10px;display: none" role="alert"
+                         id="login-error"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end content -->
+
+    <!-- start footer -->
+    <div id="includedFooter"></div>
+    <!-- end footer -->
+</div>
+
+<!-- start javascript -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/sidenav.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+
+    function submitFormLogin() {
+        const email = document.getElementById('email-login').value;
+        const password = document.getElementById('password-login').value;
+        axios.post('http://127.0.0.1:5000/login', {
+            email: email,
+            password: password,
+        })
+            .then(function (response) {
+                document.getElementById("registerForm").setAttribute("style", "display:none")
+                document.getElementById("loginForm").setAttribute("style", "display:none")
+                let success = document.getElementById("login-success")
+                success.setAttribute("style", "")
+                success.innerText = response.data.message + "\n" + "تا چند ثانیه دیگر به صفحه اصلی منتقل میشوید"
+                localStorage.setItem("fullname", response.data.fullname)
+                localStorage.setItem("email", email)
+                localStorage.setItem("is_login", "true")
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 3000)
+            })
+            .catch(function (error) {
+                let show_message = document.getElementById('login-error')
+                show_message.setAttribute("style", "padding: 10px;display: block; margin-top: 10px")
+                show_message.innerText = error.response.data.message
+            });
+    }
+
+    function submitFormRegister() {
+        const fullname = document.getElementById('fullname-register').value;
+        const email = document.getElementById('email-register').value;
+        const password = document.getElementById('password-register').value;
+        axios.post('http://127.0.0.1:5000/register', {
+            fullname: fullname,
+            email: email,
+            password: password,
+        })
+            .then(function (response) {
+                document.getElementById("registerForm").setAttribute("style", "display:none")
+                document.getElementById("loginForm").setAttribute("style", "display:none")
+                let success = document.getElementById("login-success")
+                success.setAttribute("style", "")
+                success.innerText = response.data.message + "\n" + "تا چند ثانیه دیگر به صفحه اصلی منتقل میشوید"
+                localStorage.setItem("fullname", fullname)
+                localStorage.setItem("email", email)
+                localStorage.setItem("is_login", "true")
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 3000)
+            })
+            .catch(function (error) {
+                let show_message = document.getElementById('register-error')
+                show_message.setAttribute("style", "padding: 10px;display: block; margin-top: 10px")
+                show_message.innerText = error.response.data.message
+            });
+    }
+</script>
+<!-- end javascript -->
+</body>
+<!-- This template has been downloaded from Webrubik.com -->
+
+</html>
