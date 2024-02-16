@@ -407,7 +407,7 @@ body {
 .ih-item.circle {
     position: relative;
     width: 220px;
-    height: 220px;
+    height: 120px;
     border-radius: 50%;
     margin: 20px auto;
 }
@@ -415,7 +415,7 @@ body {
 .ih-item.circle .img {
     position: relative;
     width: 220px;
-    height: 220px;
+    height: 120px;
     border-radius: 50%;
 }
 
@@ -575,14 +575,14 @@ body {
 
 .ih-item.circle.effect1 .spinner {
     width: 230px;
-    height: 230px;
+    height: 130px;
     border: 10px solid #d8a97d;
     border-right-color: #7c5a42;
     border-bottom-color: #3b2118;
     border-radius: 50%;
-    -webkit-transition: all 0.8s ease-in-out;
-    -moz-transition: all 0.8s ease-in-out;
-    transition: all 0.8s ease-in-out;
+    -webkit-transition: all 0.8s linear;
+    -moz-transition: all 0.8s linear;
+    transition: all 0.8s linear;
 }
 
 .ih-item.circle.effect1 .img {
